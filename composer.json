@@ -1,0 +1,52 @@
+{
+    "name": "developerhouse/rocket",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DeveloperHouse\\Rocket\\": [
+                "src/",
+                "database/"
+            ]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DeveloperHouse\\Rocket\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Jose Ruiz Gutierrez",
+            "email": "djruiz@developerhouse.co",
+            "homepage": "https://developerhouse.co",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "spatie/laravel-permission": "^5.10",
+        "laravel/helpers": "^1.6",
+        "nesbot/carbon": "^2.69"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --tag=rocket-config"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DeveloperHouse\\Rocket\\Providers\\RocketServiceProvider",
+                "DeveloperHouse\\Rocket\\Providers\\RouteServiceProvider"
+            ],
+            "aliases": {
+                "Rocket": "DeveloperHouse\\Rocket\\Facades\\Rocket"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
