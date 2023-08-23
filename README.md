@@ -9,13 +9,19 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Instalación
 
 ```
-composer require developerhouse/rocket.
+composer require developerhouse/rocket
 ```
 Una vez que se haya instalado el paquete, debes ejecutar los siguientes comandos: (Importante)
 ```
  php artisan vendor:publish --tag=rocket-config
  php artisan migrate
+ php artisan rocket:seeder
 ```
+## Restaurar las tablas al estado inicial
+```
+ php artisan rocket:truncate
+```
+
 ## Agrega el Trait al modelo User
 ```
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,4 +51,54 @@ De forma predeterminada, los tokens de Sanctum caducan cada 30 Minutos. Sin emba
         'expiration' => 30,
     ],
 ```
+## Las tablas por defecto del paquete son:
+- users (Actualización de la tabla users de Laravel)
+- personal_access_tokens
+- model_has_permissions
+- role_has_permissions
+- permissions
+- model_has_roles
+- roles
+- values
+- parameters
+- countries
+- departments
+- cities
 
+## Usuario por defecto:
+- email: rocket@developerhouse.co
+- password: password
+
+## Rutas por defecto de la API:
+A continuación se presenta una lista de rutas API disponibles en la aplicación:
+
+| Método | Ruta                                      | Controlador y Método                  |
+|--------|-------------------------------------------|---------------------------------------|
+| POST   | api/assign/permission/to/role             | RoleController@assignPermissionToRole |
+| POST   | api/auth/login                            | AuthController@login                  |
+| POST   | api/auth/logout                           | AuthController@logout                 |
+| POST   | api/auth/password/email                   | AuthController@emailPassword          |
+| POST   | api/auth/password/reset                   | AuthController@resetPassword          |
+| GET    | api/cities                                | CityController@index                  |
+| POST   | api/cities                                | CityController@store                  |
+| PUT    | api/cities/{city}                         | CityController@update                 |
+| DELETE | api/cities/{city}                         | CityController@destroy                |
+| GET    | api/countries                             | CountryController@index               |
+| POST   | api/countries                             | CountryController@store               |
+| PUT    | api/countries/{country}                   | CountryController@update              |
+| DELETE | api/countries/{country}                   | CountryController@destroy             |
+| GET    | api/departments                           | DepartmentController@index            |
+| POST   | api/departments                           | DepartmentController@store            |
+| PUT    | api/departments/{department}              | DepartmentController@update           |
+| DELETE | api/departments/{department}              | DepartmentController@destroy          |
+| GET    | api/permissions                           | PermissionController@index            |
+| POST   | api/permissions                           | PermissionController@store            |
+| GET    | api/roles                                 | RoleController@index                  |
+| POST   | api/roles                                 | RoleController@store                  |
+| GET    | api/roles/{role}                          | RoleController@show                   |
+| GET    | api/values                                | ValueController@index                 |
+| POST   | api/values                                | ValueController@store                 |
+| GET    | api/values/{value}                        | ValueController@show                  |
+| PUT    | api/values/{value}                        | ValueController@update                |
+| POST   | api/values/{value}/parameters             | ParameterController@store             |
+| PUT    | api/values/{value}/parameters/{parameter} | ParameterController@update            |
