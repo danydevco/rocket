@@ -23,4 +23,7 @@ trait UserRocketTrait {
         return $this->belongsTo(User::class, 'supervisor_id');
     }
 
+    public function getNameAttribute() {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 }

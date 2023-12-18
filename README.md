@@ -44,6 +44,42 @@ php artisan vendor:publish --tag=rocket-migrations
 ``` bash
 php artisan vendor:publish --tag=rocket-seeders
 ```
+Después de publicar los seeders del paquete Rocket, debes modificar el seeder principal `DatabaseSeeder` de tu proyecto para que pueda ejecutar los seeders de Rocket. Aquí tienes un ejemplo de cómo debería verse tu `DatabaseSeeder`:
+
+```php
+use DeveloperHouse\Rocket\seeders\RoleSeeder;
+use DeveloperHouse\Rocket\seeders\ValueSeeder;
+use DeveloperHouse\Rocket\seeders\ParameterSeeder;
+use DeveloperHouse\Rocket\seeders\CountrySeeder;
+use DeveloperHouse\Rocket\seeders\DepartmentSeeder;
+use DeveloperHouse\Rocket\seeders\CitySeeder;
+use DeveloperHouse\Rocket\seeders\UserSeeder;
+
+class DatabaseSeeder extends Seeder {
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void {
+        // START ROCKET SEEDERS
+        $this->call([
+            RoleSeeder::class,
+            ValueSeeder::class,
+            ParameterSeeder::class,
+            CountrySeeder::class,
+            DepartmentSeeder::class,
+            CitySeeder::class,
+            UserSeeder::class,
+        ]);
+        // END ROCKET SEEDERS
+
+        // \App\Models\User::factory(10)->create();
+
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
+    }
+}
 
 ### Publicar Vistas
 ``` bash
@@ -78,6 +114,19 @@ class User extends Authenticatable{
     // ...
 }
 ```
+
+### Simulación del Atributo Name en el Modelo User
+El paquete Rocket no utiliza la columna `name` en la tabla `users`. En su lugar, utiliza las columnas `first_name` y `last_name`. Sin embargo, puedes simular el atributo `name` en el modelo `User` utilizando el trait `UserRocketTrait` proporcionado por el paquete Rocket.
+
+El trait `UserRocketTrait` incluye un accesor para el atributo `name` que devuelve la concatenación de los atributos `first_name` y `last_name`. Esto te permite seguir accediendo al atributo `name` en tus instancias del modelo `User` como si la columna `name` existiera en la base de datos.
+
+Aquí tienes un ejemplo de cómo puedes usar este accesor:
+
+```php
+$user = User::find(1);
+echo $user->name; // Imprime "Nombre Apellido"
+```
+
 ## Caducidad del token
 De forma predeterminada, los tokens de Sanctum caducan cada 30 Minutos. Sin embargo, si deseas configurar un tiempo de caducidad diferente para los tokens de la API en tu aplicación, puedes hacerlo a través de la configuración definida en el archivo `config/rocket.php`. Esta opción de configuración permite definir la cantidad de minutos después de los cuales un token emitido se considerará caducado:
 ```
