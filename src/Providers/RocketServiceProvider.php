@@ -24,7 +24,8 @@ class RocketServiceProvider extends ServiceProvider {
         $this->publishes([$this->basePath('resources/views/') => resource_path('views/vendor/rocket')], 'rocket-views');
         $this->publishes([$this->basePath('config/rocket.php') => base_path('config/rocket.php')], 'rocket-config');
         $this->publishes([$this->basePath('resources/lang/') => resource_path('lang/vendor/rocket')], 'rocket-lang');
-
+        $this->publishes([$this->basePath('database/migrations/') => database_path('migrations')], 'rocket-migrations');
+        $this->publishes([$this->basePath('database/seeders/') => database_path('seeders')], 'rocket-seeders');
         // $this->loadMigrationsFrom(base_path('vendor/spatie/laravel-permission/database/migrations'));
 
         /*

@@ -28,5 +28,4 @@ class RouteServiceProvider extends ServiceProvider {
         //$this->app['router']->aliasMiddleware('rocket.error.handler', ErrorHandlerMiddleware::class);
 
     }
-
 }
