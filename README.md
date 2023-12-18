@@ -8,17 +8,32 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Instalación
 
-```
+``` bash
 composer require developerhouse/rocket
 ```
+
 Una vez que se haya instalado el paquete, debes ejecutar los siguientes comandos: (Importante)
-```
+
+``` bash
  php artisan vendor:publish --tag=rocket-config
  php artisan migrate
  php artisan rocket:seeder
 ```
-## Restaurar las tablas al estado inicial
+
+## Opcionales
+
+### Herramientas de Desarrollo
+Para facilitar el desarrollo y depuración de tu aplicación, puedes optar por instalar las siguientes herramientas:
+- **barryvdh/laravel-debugbar:** Esta herramienta te proporciona una barra de depuración en la parte inferior de tu aplicación cuando estás en el entorno de desarrollo. Para instalarla, ejecuta el siguiente comando:
+``` bash 
+composer require barryvdh/laravel-debugbar --dev
 ```
+
+Recuerda que estos paquetes son opcionales y están destinados a ser utilizados en entornos de desarrollo, no en producción
+
+
+## Restaurar las tablas al estado inicial
+``` bash
  php artisan rocket:truncate
 ```
 
