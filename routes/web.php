@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('auth')->middleware(['rocket.api.response'])->group(function () {
     Route::post(config('rocket.route.auth.login'), [AuthController::class, 'login']);
 
-    Route::post(config('rocket.route.auth.password.email'), [AuthController::class, 'emailPassword'])->middleware(['throttle:1,1']);
+    Route::post(config('rocket.route.auth.password.email'), [AuthController::class, 'emailPassword']);
     Route::post(config('rocket.route.auth.password.reset'), [AuthController::class, 'resetPassword']);
 
     Route::middleware(['auth:sanctum'])->group(function () {
