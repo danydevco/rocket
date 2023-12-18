@@ -14,8 +14,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
 use Throwable;
 
 class Handler extends ExceptionHandler {
@@ -53,9 +53,9 @@ class Handler extends ExceptionHandler {
 
     public function render($request, Throwable $e): \Illuminate\Http\Response|JsonResponse|Response {
 
-        if (($e instanceof HttpException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse(trans('rocket::message.unauthorized'), 401);
-            return response()->json($data, 403);
+        if (($e instanceof ThrottleRequestsException) && $request->expectsJson()) {
+            $data = ApiResponseUtil::errorResponse($e->getMessage(), 429);
+            return response()->json($data, 429);
         }
 
         if (($e instanceof AuthorizationException) && $request->expectsJson()) {
@@ -76,6 +76,11 @@ class Handler extends ExceptionHandler {
         if (($e instanceof ValidationException) && $request->expectsJson()) {
             $data = ApiResponseUtil::errorResponse($e->getMessage(), 401);
             return response()->json($data, 404);
+        }
+
+        if (($e instanceof HttpException) && $request->expectsJson()) {
+            $data = ApiResponseUtil::errorResponse(trans('rocket::message.unauthorized'), 401);
+            return response()->json($data, 403);
         }
 
         return parent::render($request, $e);

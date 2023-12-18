@@ -6,9 +6,15 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class EmailPasswordRequest extends FormRequest {
     public function rules(): array {
-        return [
-            'email' => 'required|email',
-        ];
+        if (config('rocket.login.field') == 'email') {
+            return [
+                'email' => 'required|email',
+            ];
+        } else {
+            return [
+                'username' => 'required',
+            ];
+        }
     }
 
     public function authorize(): bool {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c9f9c132b9bbb7ed917924a910b1a0f",
+    "content-hash": "8f5b648ae2306cb94ddc082ccd5e10ec",
     "packages": [
         {
             "name": "brick/math",
@@ -5096,22 +5096,22 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v6.32.0",
+            "version": "v6.33.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "2d0829f03b5776eda29a8d2293f8d99adda7aeb2"
+                "reference": "917b1d0232390740d51ec5358b1ab4a5f1e210c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/2d0829f03b5776eda29a8d2293f8d99adda7aeb2",
-                "reference": "2d0829f03b5776eda29a8d2293f8d99adda7aeb2",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/917b1d0232390740d51ec5358b1ab4a5f1e210c9",
+                "reference": "917b1d0232390740d51ec5358b1ab4a5f1e210c9",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^8.83.27",
                 "mockery/mockery": "^1.4.4",
-                "orchestra/testbench-core": "^6.36",
+                "orchestra/testbench-core": "^6.37.1",
                 "php": "^7.3 || ^8.0",
                 "phpunit/phpunit": "^8.5.21 || ^9.5.10",
                 "spatie/laravel-ray": "^1.29.7"
@@ -5145,22 +5145,22 @@
             ],
             "support": {
                 "issues": "https://github.com/orchestral/testbench/issues",
-                "source": "https://github.com/orchestral/testbench/tree/v6.32.0"
+                "source": "https://github.com/orchestral/testbench/tree/v6.33.1"
             },
-            "time": "2023-08-19T03:53:56+00:00"
+            "time": "2023-08-22T11:30:21+00:00"
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v6.36.0",
+            "version": "v6.37.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "3299a20af39a15471dd49d9f2fe1d2cc7b791d6f"
+                "reference": "7705fd05376c7790192184ef76d4ed972cb9ca2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/3299a20af39a15471dd49d9f2fe1d2cc7b791d6f",
-                "reference": "3299a20af39a15471dd49d9f2fe1d2cc7b791d6f",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/7705fd05376c7790192184ef76d4ed972cb9ca2e",
+                "reference": "7705fd05376c7790192184ef76d4ed972cb9ca2e",
                 "shasum": ""
             },
             "require": {
@@ -5227,7 +5227,7 @@
                 "issues": "https://github.com/orchestral/testbench/issues",
                 "source": "https://github.com/orchestral/testbench-core"
             },
-            "time": "2023-08-19T03:29:07+00:00"
+            "time": "2023-08-22T11:21:25+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -7600,7 +7600,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,

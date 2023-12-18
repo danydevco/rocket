@@ -9,10 +9,18 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class AuthRequest extends FormRequest {
     public function rules(): array {
-        return [
-            'email' => 'required|email',
-            'password' => 'required',
-        ];
+
+        if (config('rocket.login.field') == 'email') {
+            return [
+                'email' => 'required|email',
+                'password' => 'required',
+            ];
+        } else {
+            return [
+                'username' => 'required',
+                'password' => 'required',
+            ];
+        }
     }
 
     public function authorize(): bool {
