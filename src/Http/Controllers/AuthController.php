@@ -22,14 +22,13 @@ use Illuminate\Support\Facades\Mail;
 use DeveloperHouse\Rocket\Http\Mail\EmailPasswordMail;
 use Illuminate\Support\Facades\Log;
 
-class AuthController extends Controller {
+class AuthController extends RocketController {
     public function login(AuthRequest $request) {
 
         try {
 
             if (!Auth::attempt($request->only([config('rocket.login.field'), 'password']))) {
-                $data = ApiResponseUtil::errorResponse(trans('rocket::message.login.error'), 401);
-                return response()->json($data, 401);
+                return $this->error(trans('rocket::message.login.error'), 401);
             }
 
             $user = User::where(config('rocket.login.field'), $request->get(config('rocket.login.field')))->first();
@@ -40,33 +39,36 @@ class AuthController extends Controller {
                 $user->tokens()->delete();
 
                 $expiresAt = Carbon::now()->addMinutes(config('rocket.sanctum.expiration'));
-                $token     = $user->createToken('token-name', ['*'], $expiresAt)->plainTextToken;
 
-                return ApiResponseUtil::successResponse([
+                $token = $user->createToken('token-name', ['*'], $expiresAt)->plainTextToken;
+
+                $data = [
                     'message' => 'User Logged In Successfully',
                     'token' => $token,
-                ]);
+                ];
+
+                return $this->success(
+                    data: $data,
+                    message: 'User Logged In Successfully'
+                );
 
             } else {
-                $data = ApiResponseUtil::errorResponse($user->state->description, 401);
-                return response()->json($data, 401);
+                return $this->error(
+                    $user->state->description, 401
+                );
             }
 
-
         } catch (Throwable $th) {
-            $data = ApiResponseUtil::errorResponse($th->getMessage(), 401);
-            return response()->json($data, 500);
+            return $this->error(
+                $th->getMessage(), 500
+            );
         }
 
     }
 
     public function logout(Request $request) {
-
         $request->user()->currentAccessToken()->delete();
-
-        return ApiResponseUtil::successResponse([
-            'message' => 'Session cerrada correctamente',
-        ]);
+        return $this->success(message: 'Session cerrada correctamente');
     }
 
     public function emailPassword(EmailPasswordRequest $request) {
@@ -81,20 +83,22 @@ class AuthController extends Controller {
                 $token = $this->generateAndSaveToken($user->email);
                 $this->sendEmailPasswordMail($user, $token);
 
-                return ApiResponseUtil::successResponse([
-                    'message' => trans('rocket::password.email.success.send'),
-                ]);
+                return $this->success(
+                    message: trans('rocket::password.email.success.send')
+                );
 
             } catch (\Exception $e) {
-                dd($e);
                 Log::error($e);
-                return ApiResponseUtil::errorResponse(
-                    trans('rocket::password.email.error.send')
+                return $this->error(
+                    message: trans('rocket::password.email.error.send'),
+                    status: 500
                 );
             }
 
         } else {
-            return ApiResponseUtil::noFound(trans('rocket::password.not_found'));
+            return $this->noFound(
+                trans('rocket::password.not_found')
+            );
         }
 
     }
@@ -113,16 +117,18 @@ class AuthController extends Controller {
                 $this->deleteOldTokens($user->email);
                 $this->sendResetPasswordMail($user);
 
-                return ApiResponseUtil::successResponse([
-                    'message' => trans('rocket::password.reset.success.reset'),
-                ]);
+                return $this->success(
+                    message: trans('rocket::password.reset.success.reset')
+                );
 
             } else {
-                return ApiResponseUtil::noFound(trans('rocket::password.reset.error.token'));
+                return $this->noFound(message: trans('rocket::password.reset.error.token'));
             }
 
         } else {
-            return ApiResponseUtil::noFound(trans('rocket::password.not_found'));
+            return $this->noFound(
+                trans('rocket::password.not_found')
+            );
         }
     }
 
