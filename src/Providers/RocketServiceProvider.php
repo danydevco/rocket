@@ -36,7 +36,7 @@ class RocketServiceProvider extends ServiceProvider {
         */
 
 
-        $this->loadMigrationsFrom($this->basePath('database/migrations'));
+        // $this->loadMigrationsFrom($this->basePath('database/migrations'));
         $this->loadTranslationsFrom($this->basePath('resources/lang/'), 'rocket');
         $this->loadViewsFrom($this->basePath('resources/views/'), 'rocket');
 

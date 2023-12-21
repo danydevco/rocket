@@ -3,14 +3,17 @@
 
 namespace DeveloperHouse\Rocket\Exceptions;
 
+use DeveloperHouse\Rocket\Models\Error;
 use DeveloperHouse\Rocket\Utils\ApiResponseUtil;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -53,9 +56,23 @@ class Handler extends ExceptionHandler {
 
     public function render($request, Throwable $e): \Illuminate\Http\Response|JsonResponse|Response {
 
+        Error::create([
+            'message' => $e->getMessage(),
+            'stack_trace' => $e->getTraceAsString(),
+            'url' => $request->url(),
+            'input' => $request->all(),
+        ]);
+
         if (($e instanceof ThrottleRequestsException) && $request->expectsJson()) {
             $data = ApiResponseUtil::error($e->getMessage(), 429);
             return response()->json($data, 429);
+        }
+
+        if ($e instanceof QueryException && $request->expectsJson()) {
+            if ($request->expectsJson()) {
+                $data = ApiResponseUtil::error('La operación no se pudo completar debido a un conflicto con el estado actual del recurso. (db)', 409);
+                return response()->json($data, 409);
+            }
         }
 
         if (($e instanceof AuthorizationException) && $request->expectsJson()) {
