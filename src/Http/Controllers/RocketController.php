@@ -3,11 +3,13 @@
 namespace DeveloperHouse\Rocket\Http\Controllers;
 
 class RocketController extends Controller {
-    private function response($data = null, $message = null, $status = 200) {
+    private function response($data = null, $message = null, $successful = false, $status = 200) {
         $response = [
+            'successful' => $successful,
             'status' => $status,
             'message' => $message,
             'data' => $data,
+            'timestamp' => now()->toDateTimeString(),
         ];
 
         return response()->json($response, $status);
@@ -18,11 +20,11 @@ class RocketController extends Controller {
     }
 
     protected function success($data = null, $message = null, $status = 200) {
-        return $this->response($data, $message, $status);
+        return $this->response(data: $data, message: $message, successful: true, status: $status);
     }
 
     protected function noFound($message = null) {
-        return $this->error($message ?? 'No se encontró el recurso solicitado.', 404);
+        return $this->response(message: $message ?? 'No se encontró el recurso solicitado.', status: 404);
     }
 
     protected function unauthorized($message = null) {

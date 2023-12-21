@@ -27,6 +27,7 @@ Para facilitar el desarrollo y depuración de tu aplicación, puedes optar por i
 - **barryvdh/laravel-debugbar:** Esta herramienta te proporciona una barra de depuración en la parte inferior de tu aplicación cuando estás en el entorno de desarrollo. Para instalarla, ejecuta el siguiente comando:
 ``` bash
 composer require barryvdh/laravel-debugbar --dev
+composer require --dev barryvdh/laravel-ide-helper
 ```
 
 Recuerda que estos paquetes son opcionales y están destinados a ser utilizados en entornos de desarrollo, no en producción
