@@ -28,7 +28,7 @@ class AuthRequest extends FormRequest {
     }
 
     protected function failedValidation(Validator $validator) {
-        $data = ApiResponseUtil::errorResponse(trans('rocket::message.login.required'), 422);
+        $data = ApiResponseUtil::error(trans('rocket::message.login.required'), 422);
 
         throw new HttpResponseException(
             response()->json($data, 422) // You can customize the status code here

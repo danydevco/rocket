@@ -54,32 +54,32 @@ class Handler extends ExceptionHandler {
     public function render($request, Throwable $e): \Illuminate\Http\Response|JsonResponse|Response {
 
         if (($e instanceof ThrottleRequestsException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse($e->getMessage(), 429);
+            $data = ApiResponseUtil::error($e->getMessage(), 429);
             return response()->json($data, 429);
         }
 
         if (($e instanceof AuthorizationException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse('Unauthorized, verifique los parámetros enviados.', 401);
+            $data = ApiResponseUtil::error('Unauthorized, verifique los parámetros enviados.', 401);
             return response()->json($data, 401);
         }
 
         if (($e instanceof ModelNotFoundException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse(trans('rocket::message.unauthorized'), 401);
+            $data = ApiResponseUtil::error(trans('rocket::message.unauthorized'), 401);
             return response()->json($data, 401);
         }
 
         if (($e instanceof NotFoundHttpException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse('Resource not found', 401);
+            $data = ApiResponseUtil::error('Resource not found', 401);
             return response()->json($data, 404);
         }
 
         if (($e instanceof ValidationException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse($e->getMessage(), 401);
+            $data = ApiResponseUtil::error($e->getMessage(), 401);
             return response()->json($data, 404);
         }
 
         if (($e instanceof HttpException) && $request->expectsJson()) {
-            $data = ApiResponseUtil::errorResponse(trans('rocket::message.unauthorized'), 401);
+            $data = ApiResponseUtil::error(trans('rocket::message.unauthorized'), 401);
             return response()->json($data, 403);
         }
 
@@ -94,7 +94,7 @@ class Handler extends ExceptionHandler {
      * @return JsonResponse|RedirectResponse|Response
      */
     protected function unauthenticated($request, AuthenticationException $exception): JsonResponse|Response|RedirectResponse {
-        $data = ApiResponseUtil::errorResponse('Token inválido.', 401);
+        $data = ApiResponseUtil::error('Token inválido.', 401);
         return response()->json($data, 401);
     }
 
