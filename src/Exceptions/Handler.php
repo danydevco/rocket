@@ -13,6 +13,7 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
@@ -56,7 +57,10 @@ class Handler extends ExceptionHandler {
 
     public function render($request, Throwable $e): \Illuminate\Http\Response|JsonResponse|Response {
 
+        $userId = Auth::id();
+
         Error::create([
+            'user_id' => $userId,
             'message' => $e->getMessage(),
             'stack_trace' => $e->getTraceAsString(),
             'url' => $request->url(),
