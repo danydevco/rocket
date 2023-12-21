@@ -60,7 +60,7 @@ class Handler extends ExceptionHandler {
             'message' => $e->getMessage(),
             'stack_trace' => $e->getTraceAsString(),
             'url' => $request->url(),
-            'input' => $request->all(),
+            'input' => json_encode($request->all()),
         ]);
 
         if (($e instanceof ThrottleRequestsException) && $request->expectsJson()) {
