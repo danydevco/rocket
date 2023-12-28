@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\seeders;
+namespace Database\Seeders;
 
 use DeveloperHouse\Rocket\Models\Country;
 use DeveloperHouse\Rocket\Models\RoleHasPermission;
