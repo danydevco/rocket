@@ -4,10 +4,11 @@ namespace DeveloperHouse\Rocket\seeders;
 
 use DeveloperHouse\Rocket\Models\Parameter;
 use Exception;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ParameterSeeder {
-    public function __invoke(): bool {
+class ParameterSeeder extends Seeder {
+    public function run(): bool {
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 

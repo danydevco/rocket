@@ -6,14 +6,15 @@ use DeveloperHouse\Rocket\Models\ModelHasRoles;
 use DeveloperHouse\Rocket\Models\RoleHasPermission;
 use DeveloperHouse\Rocket\Models\Value;
 use Exception;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
 use App\Models\User;
 
-class UserSeeder {
-    public function __invoke(): bool {
+class UserSeeder extends Seeder {
+    public function run(): bool {
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
