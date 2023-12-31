@@ -8,6 +8,7 @@ use DeveloperHouse\Rocket\Models\Value;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\PermissionRegistrar;
@@ -23,6 +24,7 @@ class UserSeeder extends Seeder {
             DB::beginTransaction();
 
             $user              = new User();
+            $user->uuid        = Str::uuid();
             $user->id          = 1;
             $user->first_names = 'Developer';
             $user->last_names  = 'House S.A.S';
