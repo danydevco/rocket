@@ -16,7 +16,7 @@ class RocketController extends Controller {
     }
 
     protected function error($message, $status = 400) {
-        return $this->response($message, $status);
+        return $this->response(message: $message, status: $status);
     }
 
     protected function success($data = null, $message = null, $status = 200) {
