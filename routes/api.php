@@ -19,6 +19,7 @@ Route::prefix('auth')->middleware(['rocket.api.response'])->group(function () {
 
     Route::middleware(['auth:sanctum'])->group(function () {
         Route::post(config('rocket.route.auth.logout'), [AuthController::class, 'logout']);
+        Route::post(config('rocket.route.session.validate'), [AuthController::class, 'validateSession']);
     });
 
     Route::post(config('rocket.route.session.start'), [StarController::class, 'index']);
@@ -28,7 +29,6 @@ Route::prefix('auth')->middleware(['rocket.api.response'])->group(function () {
 
 Route::middleware(['auth:sanctum', 'rocket.api.response', 'rocket.refresh.token'])->group(function () {
 
-    Route::post(config('rocket.route.session.validate'), [AuthController::class, 'validateSession']);
 
     Route::resource(config('rocket.route.values'), ValueController::class)
         ->only(['index', 'show', 'store', 'update']);

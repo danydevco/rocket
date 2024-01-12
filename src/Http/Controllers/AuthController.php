@@ -38,7 +38,7 @@ class AuthController extends RocketController {
                 $expiresAt = Carbon::now()->addMinutes(config('rocket.sanctum.expiration'));
 
                 $token = $user->createToken('token-name', ['*'], $expiresAt)->plainTextToken;
-                list($id, $token) = explode('|', $token);
+                [$id, $token] = explode('|', $token);
 
                 $data = [
                     'token' => $token,
@@ -68,6 +68,7 @@ class AuthController extends RocketController {
 
     public function logout(Request $request) {
         $request->user()->currentAccessToken()->delete();
+
         return $this->success(message: 'Session cerrada correctamente');
     }
 
