@@ -23,6 +23,7 @@ use DeveloperHouse\Rocket\Http\Mail\EmailPasswordMail;
 use Illuminate\Support\Facades\Log;
 
 class AuthController extends RocketController {
+
     public function login(AuthRequest $request) {
 
         try {
@@ -130,6 +131,10 @@ class AuthController extends RocketController {
                 trans('rocket::password.not_found')
             );
         }
+    }
+
+    public function validateSession() {
+        return $this->success(message: 'Session válida');
     }
 
     protected function getUserByEmail($email) {

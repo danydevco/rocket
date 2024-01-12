@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateParametersTable extends Migration {
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -37,4 +37,4 @@ class CreateParametersTable extends Migration {
     public function down() {
         Schema::dropIfExists('parameters');
     }
-}
+};

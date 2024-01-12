@@ -6,5 +6,10 @@
         <entry key="LaravelIdeaSettings.switchedToPackageDevelopment" value="true" />
       </map>
     </option>
+    <option name="generationStringOptionValues">
+      <map>
+        <entry key="newModelSimpleOption:addFillable" value="1" />
+      </map>
+    </option>
   </component>
 </project>

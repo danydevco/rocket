@@ -2,6 +2,7 @@
 
 use DeveloperHouse\Rocket\Http\Controllers\AuthController;
 use DeveloperHouse\Rocket\Http\Controllers\ParameterController;
+use DeveloperHouse\Rocket\Http\Controllers\StarController;
 use DeveloperHouse\Rocket\Http\Controllers\ValueController;
 use DeveloperHouse\Rocket\Http\Controllers\CountryController;
 use DeveloperHouse\Rocket\Http\Controllers\DepartmentController;
@@ -20,10 +21,14 @@ Route::prefix('auth')->middleware(['rocket.api.response'])->group(function () {
         Route::post(config('rocket.route.auth.logout'), [AuthController::class, 'logout']);
     });
 
+    Route::post(config('rocket.route.session.start'), [StarController::class, 'index']);
+
 });
 
 
-Route::middleware(['rocket.api.response', 'auth:sanctum'])->group(function () {
+Route::middleware(['auth:sanctum', 'rocket.api.response', 'rocket.refresh.token'])->group(function () {
+
+    Route::post(config('rocket.route.session.validate'), [AuthController::class, 'validateSession']);
 
     Route::resource(config('rocket.route.values'), ValueController::class)
         ->only(['index', 'show', 'store', 'update']);

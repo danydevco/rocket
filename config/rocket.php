@@ -18,6 +18,10 @@ return [
         'login' => 'login',
         'values' => 'values',
         'parameters' => 'parameters',
+        'session' => [
+            'validate' => 'session/validate',
+            'start' => 'session/start',
+        ],
         'countries' => 'countries',
         'departments' => 'departments',
         'cities' => 'cities',
