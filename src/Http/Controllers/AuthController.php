@@ -3,24 +3,20 @@
 namespace DeveloperHouse\Rocket\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
+use DeveloperHouse\Rocket\Http\Mail\EmailPasswordMail;
 use DeveloperHouse\Rocket\Http\Mail\ResetPasswordMail;
 use DeveloperHouse\Rocket\Http\Request\AuthRequest;
 use DeveloperHouse\Rocket\Http\Request\EmailPasswordRequest;
 use DeveloperHouse\Rocket\Http\Request\ResetPasswordRequest;
-use DeveloperHouse\Rocket\Utils\ApiResponseUtil;
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
-use Throwable;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Mail;
-use DeveloperHouse\Rocket\Http\Mail\EmailPasswordMail;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use Throwable;
 
 class AuthController extends RocketController {
 
@@ -44,8 +40,10 @@ class AuthController extends RocketController {
                 $token = $user->createToken('token-name', ['*'], $expiresAt)->plainTextToken;
 
                 $data = [
-                    'message' => 'User Logged In Successfully',
                     'token' => $token,
+                    'first_name' => $user->first_names,
+                    'last_name' => $user->last_names,
+                    'photo' => $user->photo,
                 ];
 
                 return $this->success(
