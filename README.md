@@ -20,6 +20,76 @@ Una vez que se haya instalado el paquete, debes ejecutar los siguientes comandos
  php artisan rocket:seeder
 ```
 
+## Middlewares
+
+### Middleware Accept-Json
+Este middleware, llamado `ApiResponseMiddleware`, se utiliza para manejar las respuestas de la API en formato JSON.
+
+1. Primero, el middleware establece el encabezado 'Accept' de la solicitud a 'application/json'. Esto indica que la aplicación espera recibir una respuesta en formato JSON.
+
+2. Luego, pasa la solicitud al siguiente middleware en la pila o al controlador de la solicitud.
+
+3. Después de recibir la respuesta, establece el encabezado 'Content-Type' de la respuesta a 'application/json'. Esto indica que la respuesta que se está enviando es en formato JSON.
+
+4. Si la respuesta es una instancia de `JsonResponse`, entonces se vuelve a formatear la respuesta utilizando el método `response()->json()`. Este método devuelve una nueva respuesta JSON con los datos y el código de estado de la respuesta original.
+
+5. Si la respuesta no es una instancia de `JsonResponse`, simplemente se devuelve la respuesta tal como está.
+
+Este middleware asegura que todas las respuestas de la API estén en formato JSON y tengan los encabezados correctos, independientemente de cómo se generen las respuestas en los controladores.
+
+#### #jemplo de uso:
+```php
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "api" middleware group. Make something great!
+|
+*/
+
+Route::group(['middleware' => 'accept-json'], function () {
+    // Aca van las rutas de la API
+});
+```
+
+### Middleware RefreshToken
+Este middleware, llamado `RefreshTokenMiddleware`, se utiliza para manejar la renovación de los tokens de acceso en cada solicitud.
+
+1. Primero, el middleware extrae el token de acceso de la solicitud utilizando el método `bearerToken()`.
+
+2. Si se encuentra un token, se busca en la base de datos utilizando el método `findToken()` de la clase `PersonalAccessToken`.
+
+3. Si se encuentra un token de acceso correspondiente, se extiende su fecha de expiración. La nueva fecha de expiración se calcula sumando la cantidad de minutos especificada en la configuración `rocket.sanctum.expiration` a la hora actual.
+
+4. Finalmente, se guarda el token de acceso actualizado en la base de datos y se pasa la solicitud al siguiente middleware en la pila o al controlador de la solicitud.
+
+Este middleware asegura que los tokens de acceso se renueven automáticamente en cada solicitud, siempre que sean válidos.
+#### #jemplo de uso:
+```php
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "api" middleware group. Make something great!
+|
+*/
+
+Route::group(['middleware' => 'accept-json'], function () {
+    
+    Route::group(['middleware' => ['auth:sanctum', 'rocket.refresh.token']], function () {
+        // Aca van las rutas de la API que se desean proteger
+    });        
+});
+```
+
+```php
+
 ## Opcionales
 
 ### Herramientas de Desarrollo
@@ -45,9 +115,9 @@ php artisan vendor:publish --tag=rocket-migrations
 ``` bash
 php artisan vendor:publish --tag=rocket-seeders
 ```
-Después de publicar los seeders del paquete Rocket, debes modificar el seeder principal `DatabaseSeeder` de tu proyecto para que pueda ejecutar los seeders de Rocket. Aquí tienes un ejemplo de cómo debería verse tu `DatabaseSeeder`:
+Después de publicar los seeders del paquete Rocket, debes modificar el seeder principal `DatabaseSeeder` de tu proyecto para que pueda ejecutar los seeders de Rocket. Aquí tienes un ejemplo de cómo debería verse tú `DatabaseSeeder`:
 
-```php
+``` php
 use DeveloperHouse\Rocket\seeders\RoleSeeder;
 use DeveloperHouse\Rocket\seeders\ValueSeeder;
 use DeveloperHouse\Rocket\seeders\ParameterSeeder;
@@ -81,6 +151,7 @@ class DatabaseSeeder extends Seeder {
         // ]);
     }
 }
+```
 
 ### Publicar Vistas
 ``` bash
