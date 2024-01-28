@@ -39,12 +39,14 @@ class AuthController extends RocketController {
 
                 $token = $user->createToken('token-name', ['*'], $expiresAt)->plainTextToken;
                 [$id, $token] = explode('|', $token);
+                $role = $user->roles->first();
 
                 $data = [
                     'token' => $token,
                     'first_name' => $user->first_names,
                     'last_name' => $user->last_names,
                     'photo' => $user->photo,
+                    'role' => $role->name,
                 ];
 
                 return $this->success(
