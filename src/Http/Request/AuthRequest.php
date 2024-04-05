@@ -9,10 +9,6 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class AuthRequest extends FormRequest {
 
-    public function authorize(): bool {
-        return true;
-    }
-
     public function rules(): array {
 
         if (config('rocket.login.field') == 'email') {
@@ -29,13 +25,8 @@ class AuthRequest extends FormRequest {
 
     }
 
-    public function messages(): array {
-        return [
-            'email.required' => 'El campo de correo electrónico es obligatorio.',
-            'email.email' => 'Por favor ingrese un correo electrónico válido.',
-            'password.required' => 'El campo de contraseña es obligatorio.',
-            'username.required' => 'El campo de nombre de usuario es obligatorio.',
-        ];
+    public function authorize(): bool {
+        return true;
     }
 
     protected function failedValidation(Validator $validator) {
