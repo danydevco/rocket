@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class TextEmailComponent extends Component {
-    public array  $styles;
+    public array $styles;
 
     /**
      * Create a new component instance.
@@ -35,7 +35,9 @@ class TextEmailComponent extends Component {
             $styleString .= $key . ': ' . $value . '; ';
         }
 
-        return view('rocket::components.email.text');
+        return view('rocket::components.email.text')->with([
+            'styleString' => $styleString,
+        ]);
     }
 
 }
