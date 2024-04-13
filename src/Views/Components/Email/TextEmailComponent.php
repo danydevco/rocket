@@ -35,9 +35,7 @@ class TextEmailComponent extends Component {
             $styleString .= $key . ': ' . $value . '; ';
         }
 
-        return view('rocket::components.email.text')->with([
-            'styles' => $styleString,
-        ]);
+        return view('rocket::components.email.text');
     }
 
 }
