@@ -11,6 +11,7 @@
         @include('rocket::mail.templates.style')
 
     </head>
+
     <body>
         <table border="0" cellpadding="0" cellspacing="0"
                style="outline: 0; width: 100%; min-width: 100%; height: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; box-sizing: border-box; color: #000000; border-top-style: solid !important; margin: 0; border-color: #cbd5e0; border-width: 2px 0 0; padding: 0 16px;">
@@ -21,12 +22,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="content">
-                        <div style="border-radius: 6px; border-collapse: separate; width: 100%; overflow: hidden; border: 1px solid #e2e8f0; padding-top: 36px; padding-bottom: 36px; ">
-                            <div style="padding-left: 16px; padding-right: 16px;">
-                                @yield('content')
-                            </div>
-                        </div>
+                    <td style="border-radius: 6px; border-collapse: separate; width: 100%; overflow: hidden; border: 1px solid #e2e8f0; padding: 36px 16px;">
+                        @yield('content')
                     </td>
                 </tr>
                 <tr>
