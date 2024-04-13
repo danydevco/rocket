@@ -1,3 +1,3 @@
-<p style="{{ $style }}">
+<p style="{{ $styles }}">
     {{ $slot }}
 </p>
