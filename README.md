@@ -158,6 +158,11 @@ class DatabaseSeeder extends Seeder {
 php artisan vendor:publish --tag=rocket-views
 ```
 
+### Publicar Assets
+``` bash
+php artisan vendor:publish --tag=rocket-public
+```
+
 ### Publicar Configuración
 ``` bash
 php artisan vendor:publish --tag=rocket-config

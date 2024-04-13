@@ -6,8 +6,11 @@ use DeveloperHouse\Rocket\Commands\SeederCommand;
 use DeveloperHouse\Rocket\Commands\TruncateCommand;
 use DeveloperHouse\Rocket\Exceptions\Handler;
 use DeveloperHouse\Rocket\Start;
+use DeveloperHouse\Rocket\Views\Components\Breadcrumb;
+use DeveloperHouse\Rocket\Views\Components\Header;
+use DeveloperHouse\Rocket\Views\Components\Sidebar;
+use DeveloperHouse\Rocket\Views\Components\TableComponent;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
 
@@ -26,6 +29,7 @@ class RocketServiceProvider extends ServiceProvider {
         $this->publishes([$this->basePath('resources/lang/') => resource_path('lang/vendor/rocket')], 'rocket-lang');
         $this->publishes([$this->basePath('database/migrations/') => database_path('migrations')], 'rocket-migrations');
         $this->publishes([$this->basePath('database/seeders/') => database_path('seeders')], 'rocket-seeders');
+        $this->publishes([$this->basePath('resources/views/themes/able/assets')=> public_path('vendor/rocket/themes/able/assets')], 'rocket-public');
         // $this->loadMigrationsFrom(base_path('vendor/spatie/laravel-permission/database/migrations'));
 
         /*
@@ -43,6 +47,13 @@ class RocketServiceProvider extends ServiceProvider {
         $this->commands([
             SeederCommand::class,
             TruncateCommand::class,
+        ]);
+
+        $this->loadViewComponentsAs('rocket', [
+            TableComponent::class,
+            Breadcrumb::class,
+            Header::class,
+            Sidebar::class
         ]);
 
     }

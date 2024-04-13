@@ -1,0 +1,228 @@
+:root {
+    --bg-rocket-table-header        : white;
+    --bg-rocket-table-body          : white;
+    --color-rocket-table-header     : --bs-body-color;
+    --color-rocket-table-body       : #7f8fa4;
+    --color-rocket-table-body-title : #022047;
+    --bg-odd-rocket-table-body      : white;
+    --bg-even-rocket-table-body     : #f9fbfc;
+    --border-rocket-table           : #dfe5f9;
+}
+
+[data-pc-theme=dark] {
+    --bg-rocket-table-header        : #303f50;
+    --bg-rocket-table-body          : white;
+    --color-rocket-table-header     : --bs-body-color;
+    --color-rocket-table-body       : #7f8fa4;
+    --color-rocket-table-body-title : #022047;
+    --bg-odd-rocket-table-body      : #1d2634;
+    --bg-even-rocket-table-body     : transparent;
+    --border-rocket-table           : #303f50;
+}
+
+
+.rocket-table-basic {
+
+    .rocket-table-header {
+        display    : none;
+        background : var(--bg-rocket-table-header);
+    }
+
+    .rocket-table-body {
+
+        .container-fluid {
+            padding : 12px;
+            // border-radius : var(--bs-card-border-radius);
+
+            &:nth-of-type(odd) {
+                background : var(--bg-odd-rocket-table-body);
+            }
+
+            &:nth-of-type(even) {
+                background : var(--bg-even-rocket-table-body);
+            }
+
+            &:first-child {
+                border-top-left-radius  : 5px;
+                border-top-right-radius : 5px;
+            }
+
+            &:last-child {
+                border-bottom-left-radius  : 5px;
+                border-bottom-right-radius : 5px;
+            }
+
+            .row {
+                position : relative;
+
+                .col {
+                    display       : flex;
+                    flex          : 0 0 auto;
+                    margin-bottom : 10px;
+
+                    .details {
+                        display : grid;
+
+                        .label {
+                            color       : var(--color-rocket-table-body);
+                            font-size   : 12px;
+                            font-weight : 500;
+                            line-height : 1.43;
+                            text-align  : left;
+                            white-space : nowrap;
+                            width       : auto;
+                        }
+
+                        .separator {
+                            display : none;
+                        }
+
+                        .value {
+                            display : grid;
+
+                            .title {
+                                color       : var(--color-rocket-table-body-title);
+                                font-size   : 14px;
+                                font-weight : 600;
+                            }
+
+                            .subtitle {
+                                display : none;
+                            }
+                        }
+
+                    }
+
+                }
+
+                .col-option {
+                    position : absolute !important;
+                    top      : 0;
+                    right    : 0;
+                    width    : auto;
+
+                    .option {
+                        position : relative;
+
+                        .dropdown-menu {
+                            top : 45px !important;
+                        }
+
+                        .dropdown-menu[style] {
+                            right : 0 !important;
+                        }
+
+                        a {
+                            color : var(--color-rocket-table-body)
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+    }
+
+}
+
+
+@include media-breakpoint-up(lg) {
+
+    .rocket-table-basic {
+        .rocket-table-header {
+            align-items             : center;
+            border-bottom           : 1px solid var(--border-rocket-table);
+            display                 : flex;
+            height                  : 45px;
+            background              : var(--bg-rocket-table-header);
+            border-top-left-radius  : 5px;
+            border-top-right-radius : 5px;
+
+            .container-fluid {
+                .row {
+                    .col {
+                        .details {
+                            .label {
+                                color          : var(--bs-body-color);
+                                font-weight    : 700;
+                                text-transform : uppercase;
+                            }
+                        }
+                    }
+
+                    .col-option {
+                        position        : inherit !important;
+                        justify-content : center;
+                    }
+
+                    .col-id {
+                        flex  : 0 0 auto !important;
+                        width : 8.3333333333%;
+                    }
+
+                    .col-option {
+                        flex        : 0 0 auto;
+                        width       : 8.3333333333%;
+                        align-items : center;
+                    }
+
+                }
+            }
+        }
+
+        .rocket-table-body {
+            .container-fluid {
+                .row {
+                    .col {
+                        flex          : 1 0 0;
+                        margin-bottom : 0;
+
+                        .details {
+
+                            .label {
+                                display : none;
+                            }
+
+                            .separator {
+                                display : none;
+                            }
+
+                            .value {
+
+                                .title {
+                                    font-size : 14px;
+                                    color     : #7f8fa4;
+                                }
+
+                                .subtitle {
+                                    color       : #7f8fa4;
+                                    display     : block;
+                                    font-size   : 10px;
+                                    font-weight : 400;
+                                }
+                            }
+                        }
+                    }
+
+                    .col-option {
+                        position        : inherit !important;
+                        justify-content : center;
+                    }
+
+                    .col-id {
+                        flex  : 0 0 auto !important;
+                        width : 8.3333333333%;
+                    }
+
+                    .col-option {
+                        flex        : 0 0 auto;
+                        width       : 8.3333333333%;
+                        align-items : center;
+                    }
+                }
+            }
+        }
+    }
+
+}
