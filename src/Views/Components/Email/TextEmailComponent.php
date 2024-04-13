@@ -7,13 +7,12 @@ use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
 class TextEmailComponent extends Component {
-    public string $text;
     public array  $styles;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(string $text, array $styles) {
+    public function __construct(array $styles) {
         $defaultStyles = [
             'text-align' => 'left',
             'padding' => '0',
@@ -23,7 +22,6 @@ class TextEmailComponent extends Component {
             'line-height' => '1.5',
             'width' => '100%',
         ];
-        $this->text    = $text;
         $this->styles  = array_merge($defaultStyles, $styles);
     }
 
@@ -38,7 +36,6 @@ class TextEmailComponent extends Component {
         }
 
         return view('rocket::components.email.text')->with([
-            'text' => $this->text,
             'styles' => $styleString,
         ]);
     }
