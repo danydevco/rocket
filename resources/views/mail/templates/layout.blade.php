@@ -22,15 +22,15 @@
                 </tr>
                 <tr>
                     <td class="content">
-                        <div class="card py-9">
-                            <div class="card-body px-4">
+                        <div style="border-radius: 6px; border-collapse: separate; width: 100%; overflow: hidden; border: 1px solid #e2e8f0; padding-top: 36px; padding-bottom: 36px; ">
+                            <div style="padding-left: 16px; padding-right: 16px;">
                                 @yield('content')
                             </div>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="footer">
+                    <td style="text-align: center; padding: 35px 40px; line-height: 24px; font-size: 16px;">
                         @include('rocket::mail.templates.footer', ['url' => config('app.url')])
                     </td>
                 </tr>
