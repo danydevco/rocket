@@ -14,7 +14,7 @@ class TextEmailComponent extends Component {
      * @param array  $styles
      * @param string $type
      */
-    public function __construct(array $styles, string $type = '') {
+    public function __construct(array $styles = [], string $type = 'paragraph') {
         $this->type = $type;
 
         $customStyles = match ($type) {
