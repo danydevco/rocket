@@ -12,16 +12,21 @@
 
     </head>
     <body>
-        <table class="wrapper" border="0" cellpadding="0" cellspacing="0">
-            <tbody class="wrap">
+        <table border="0" cellpadding="0" cellspacing="0"
+               style="outline: 0; width: 100%; min-width: 100%; height: 100%; font-family: Helvetica, Arial, sans-serif; line-height: 24px; font-weight: normal; font-size: 16px; box-sizing: border-box; color: #000000; border-top-style: solid !important; margin: 0; border-color: #cbd5e0; border-width: 2px 0 0; padding: 0 16px;">
+            <tbody style="width: 100%; max-width: 600px; margin: 0 auto; display: block;">
                 <tr>
-                    <td class="header">
+                    <td style="text-align: center; padding: 45px 0;">
                         @include('rocket::mail.templates.header', ['url' => config('app.url')])
                     </td>
                 </tr>
                 <tr>
                     <td class="content">
-                        @yield('content')
+                        <div class="card py-9">
+                            <div class="card-body px-4">
+                                @yield('content')
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 <tr>
