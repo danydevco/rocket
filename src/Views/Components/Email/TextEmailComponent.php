@@ -56,8 +56,8 @@ class TextEmailComponent extends Component {
         return [
             'text-align' => 'left',
             'font-size' => '16px',
-            'color' => '#718096',
-            'font-weight' => '500',
+            'color' => '#022047',
+            'font-weight' => '600',
             'margin-bottom' => '12px',
         ];
     }
@@ -65,7 +65,7 @@ class TextEmailComponent extends Component {
     private function getStyleParagraph(): array {
         return [
             'text-align' => 'left',
-            'font-size' => '16px',
+            'font-size' => '14px',
             'color' => '#718096',
             'font-weight' => '400',
             'margin-bottom' => '12px',
