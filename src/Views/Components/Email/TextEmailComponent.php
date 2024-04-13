@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Views\Components;
+namespace DeveloperHouse\Rocket\Views\Components\Email;
 
 use Closure;
 use Illuminate\Contracts\View\View;

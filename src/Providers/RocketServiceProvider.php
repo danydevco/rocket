@@ -7,6 +7,7 @@ use DeveloperHouse\Rocket\Commands\TruncateCommand;
 use DeveloperHouse\Rocket\Exceptions\Handler;
 use DeveloperHouse\Rocket\Start;
 use DeveloperHouse\Rocket\Views\Components\Breadcrumb;
+use DeveloperHouse\Rocket\Views\Components\Email\TextEmailComponent;
 use DeveloperHouse\Rocket\Views\Components\Header;
 use DeveloperHouse\Rocket\Views\Components\Sidebar;
 use DeveloperHouse\Rocket\Views\Components\TableComponent;
@@ -53,7 +54,8 @@ class RocketServiceProvider extends ServiceProvider {
             TableComponent::class,
             Breadcrumb::class,
             Header::class,
-            Sidebar::class
+            Sidebar::class,
+            TextEmailComponent::class
         ]);
 
     }
