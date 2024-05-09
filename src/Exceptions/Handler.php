@@ -115,9 +115,12 @@ class Handler extends ExceptionHandler {
      * @return JsonResponse|RedirectResponse|Response
      */
     protected function unauthenticated($request, AuthenticationException $exception): JsonResponse|Response|RedirectResponse {
-        $data = ApiResponseUtil::error('Token inválido.', 401);
-        return response()->json($data, 401);
+        if ($request->expectsJson()) {
+            $data = ApiResponseUtil::error('Token inválido.', 401);
+            return response()->json($data, 401);
+        } else {
+            return redirect()->guest(route('login'));
+        }
     }
-
 
 }

@@ -2,7 +2,6 @@
     <div class="navbar-wrapper">
         <div class="m-header">
             <a href="{{ route('dashboard.home') }}" class="b-brand text-primary">
-                <!-- ========   Change your logo from here   ============ -->
                 <img src="{{ asset('vendor/rocket/themes/able/assets/images/logo-dark.svg') }}" class="img-fluid logo-lg" alt="logo" style="height: 50px">
                 <span class="badge bg-light-success rounded-pill ms-2 theme-version">v1.0</span>
             </a>
@@ -96,6 +95,14 @@
                                 <i class="fa-duotone fa-hands-holding-dollar pc-icon"></i>
                             </span>
                             <span class="pc-mtext">Prestamos</span>
+                        </a>
+                    </li>
+                    <li class="pc-item">
+                        <a href="{{ route('dashboard.calendar') }}" class="pc-link ">
+                            <span class="pc-micon">
+                                <i class="fa-duotone fa-calendars pc-icon"></i>
+                            </span>
+                            <span class="pc-mtext">Calendario</span>
                         </a>
                     </li>
                 @endif
