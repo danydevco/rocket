@@ -7,8 +7,8 @@
         <i class="ti ti-dots-vertical f-18"></i>
     </a>
     <div class="dropdown-menu dropdown-menu-end">
-        @foreach($links as $link)
-            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#detail-{{ $link->route }}">{{ $link->text }}</a>
+        @foreach($cell->dropdown as $item)
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#detail-{{ $item->route }}">{{ $item->label }}</a>
         @endforeach
     </div>
 </div>
