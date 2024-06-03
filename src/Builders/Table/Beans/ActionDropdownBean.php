@@ -3,12 +3,14 @@
 namespace DeveloperHouse\Rocket\Builders\Table\Beans;
 
 class ActionDropdownBean {
-    public string $route = '';
     public string $label = '';
+    public string $route = '';
+    public string $icon  = '';
 
-    public function __construct(string $route, string $label) {
-        $this->route = $route;
+    public function __construct(string $label, string $route, string $icon = '') {
         $this->label = $label;
+        $this->route = $route;
+        $this->icon  = $icon;
     }
 
     public function getRoute(): string {
@@ -27,5 +29,6 @@ class ActionDropdownBean {
         $this->label = $label;
     }
 
-    
+
+
 }
