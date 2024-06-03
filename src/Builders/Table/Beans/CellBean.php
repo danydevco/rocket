@@ -23,9 +23,6 @@ class CellBean {
     public string|null $buttonClass = '';
     public string|null $icon        = '';
 
-    // array de actions de tipo ActionBean
-    public array $actions = [];
-
     public function __construct(array $params = []) {
         $attributes = array_keys(get_object_vars($this));
 
