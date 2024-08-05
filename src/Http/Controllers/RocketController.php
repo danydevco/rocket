@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Controllers;
+namespace Danydev\Rocket\Http\Controllers;
 
 class RocketController extends Controller {
     private function response($data = null, $message = null, $successful = false, $status = 200) {

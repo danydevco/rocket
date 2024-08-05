@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use DeveloperHouse\Rocket\Models\City;
-use DeveloperHouse\Rocket\Models\RoleHasPermission;
-use DeveloperHouse\Rocket\Models\Value;
+use Danydev\Rocket\Models\City;
+use Danydev\Rocket\Models\RoleHasPermission;
+use Danydev\Rocket\Models\Value;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Mail;
+namespace Danydev\Rocket\Http\Mail;
 
 use App\Models\User;
 use Illuminate\Bus\Queueable;

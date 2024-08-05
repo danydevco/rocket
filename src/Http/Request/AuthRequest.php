@@ -1,8 +1,8 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Request;
+namespace Danydev\Rocket\Http\Request;
 
-use DeveloperHouse\Rocket\Utils\ApiResponseUtil;
+use Danydev\Rocket\Utils\ApiResponseUtil;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;

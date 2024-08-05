@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket;
+namespace Danydev\Rocket;
 
 class Start {
 

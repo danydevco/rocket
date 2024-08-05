@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Builders\Table\Beans;
+namespace Danydev\Rocket\Builders\Table\Beans;
 
 class CellBean {
 

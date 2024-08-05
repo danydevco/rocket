@@ -1,8 +1,8 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Commands;
+namespace Danydev\Rocket\Commands;
 
-use DeveloperHouse\Rocket\seeders\DatabaseSeeder;
+use Danydev\Rocket\seeders\DatabaseSeeder;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Console\Command;
 
@@ -14,7 +14,6 @@ class SeederCommand extends Command {
     public function handle(): void {
         $seeder = new DatabaseSeeder();
         $seeder();
-
         $this->info('Seeder successfully.');
     }
 }

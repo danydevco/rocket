@@ -1,10 +1,10 @@
 {
-    "name": "developerhouse/rocket",
+    "name": "danydev/rocket",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "DeveloperHouse\\Rocket\\": [
+            "Danydev\\Rocket\\": [
                 "src/",
                 "database/"
             ]
@@ -12,24 +12,24 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "DeveloperHouse\\Rocket\\Tests\\": "tests/"
+            "Danydev\\Rocket\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
             "name": "Daniel Jose Ruiz Gutierrez",
-            "email": "djruiz@developerhouse.co",
-            "homepage": "https://developerhouse.co",
+            "email": "hello@danydev.co",
+            "homepage": "https://danydev.co",
             "role": "Developer"
         }
     ],
     "require": {
-        "spatie/laravel-permission": "^5.10",
-        "laravel/helpers": "^1.6",
-        "nesbot/carbon": "^2.69"
+        "spatie/laravel-permission": "^6.0",
+        "laravel/helpers": "^1.7",
+        "nesbot/carbon": "^2.72"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.1"
+        "orchestra/testbench": "^9.2"
     },
     "scripts": {
         "post-install-cmd": [
@@ -39,11 +39,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DeveloperHouse\\Rocket\\Providers\\RocketServiceProvider",
-                "DeveloperHouse\\Rocket\\Providers\\RouteServiceProvider"
+                "Danydev\\Rocket\\Providers\\RocketServiceProvider",
+                "Danydev\\Rocket\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
-                "Rocket": "DeveloperHouse\\Rocket\\Facades\\Rocket"
+                "Rocket": "Danydev\\Rocket\\Facades\\Rocket"
             }
         }
     },

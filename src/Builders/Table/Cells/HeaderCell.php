@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Builders\Table\Cells;
+namespace Danydev\Rocket\Builders\Table\Cells;
 
 class HeaderCell {
     public string $label;

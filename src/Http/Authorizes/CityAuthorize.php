@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Authorizes;
+namespace Danydev\Rocket\Http\Authorizes;
 
 use App\Models\User;
 
@@ -12,6 +12,7 @@ class CityAuthorize {
             abort(403, trans('rocket::message.unauthorized'));
         }
     }
+
     public function create(User $auth) {
         if (!$auth->can('city.create')) {
             abort(403, trans('rocket::message.unauthorized'));

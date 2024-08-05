@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Authorizes;
+namespace Danydev\Rocket\Http\Authorizes;
 use App\Models\User;
 
 class ParameterAuthorize {

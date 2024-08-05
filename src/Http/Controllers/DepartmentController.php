@@ -1,13 +1,13 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Controllers;
+namespace Danydev\Rocket\Http\Controllers;
 
-use DeveloperHouse\Rocket\Http\Authorizes\DepartmentAuthorize;
-use DeveloperHouse\Rocket\Http\Request\CreateDepartmentRequest;
-use DeveloperHouse\Rocket\Http\Request\IndexDepartmentRequest;
-use DeveloperHouse\Rocket\Http\Request\UpdateDepartmentRequest;
-use DeveloperHouse\Rocket\Models\Department;
-use DeveloperHouse\Rocket\Utils\Response;
+use Danydev\Rocket\Http\Authorizes\DepartmentAuthorize;
+use Danydev\Rocket\Http\Request\CreateDepartmentRequest;
+use Danydev\Rocket\Http\Request\IndexDepartmentRequest;
+use Danydev\Rocket\Http\Request\UpdateDepartmentRequest;
+use Danydev\Rocket\Models\Department;
+use Danydev\Rocket\Utils\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Builders\Table;
+namespace Danydev\Rocket\Builders\Table;
 
 use Illuminate\Support\Collection;
 

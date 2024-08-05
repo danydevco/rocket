@@ -1,14 +1,14 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Controllers;
+namespace Danydev\Rocket\Http\Controllers;
 
 use App\Models\User;
 use Carbon\Carbon;
-use DeveloperHouse\Rocket\Http\Mail\EmailPasswordMail;
-use DeveloperHouse\Rocket\Http\Mail\ResetPasswordMail;
-use DeveloperHouse\Rocket\Http\Request\AuthRequest;
-use DeveloperHouse\Rocket\Http\Request\EmailPasswordRequest;
-use DeveloperHouse\Rocket\Http\Request\ResetPasswordRequest;
+use Danydev\Rocket\Http\Mail\EmailPasswordMail;
+use Danydev\Rocket\Http\Mail\ResetPasswordMail;
+use Danydev\Rocket\Http\Request\AuthRequest;
+use Danydev\Rocket\Http\Request\EmailPasswordRequest;
+use Danydev\Rocket\Http\Request\ResetPasswordRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

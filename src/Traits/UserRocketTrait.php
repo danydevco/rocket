@@ -1,8 +1,8 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Traits;
+namespace Danydev\Rocket\Traits;
 
-use DeveloperHouse\Rocket\Models\Parameter;
+use Danydev\Rocket\Models\Parameter;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\Permission\Traits\HasRoles;
 

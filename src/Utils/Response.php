@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Utils;
+namespace Danydev\Rocket\Utils;
 
 class Response {
     static function successful(array $data = ['message' => "Operación exitosa"]): array {

@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Views\Components;
+namespace Danydev\Rocket\Views\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;

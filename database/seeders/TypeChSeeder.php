@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use DeveloperHouse\Rocket\Models\TypeCh;
+use Danydev\Rocket\Models\TypeCh;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

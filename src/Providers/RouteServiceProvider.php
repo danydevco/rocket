@@ -1,11 +1,11 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Providers;
+namespace Danydev\Rocket\Providers;
 
 
-use DeveloperHouse\Rocket\Http\Controllers\AuthController;
-use DeveloperHouse\Rocket\Http\Middleware\ApiResponseMiddleware;
-use DeveloperHouse\Rocket\Http\Middleware\RefreshTokenMiddleware;
+use Danydev\Rocket\Http\Controllers\AuthController;
+use Danydev\Rocket\Http\Middleware\ApiResponseMiddleware;
+use Danydev\Rocket\Http\Middleware\RefreshTokenMiddleware;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 

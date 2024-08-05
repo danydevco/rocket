@@ -1,10 +1,10 @@
 <?php
 
 
-namespace DeveloperHouse\Rocket\Models;
+namespace Danydev\Rocket\Models;
 
-use DeveloperHouse\Rocket\Http\Request\StoreParameterRequest;
-use DeveloperHouse\Rocket\Http\Request\UpdateParameterRequest;
+use Danydev\Rocket\Http\Request\StoreParameterRequest;
+use Danydev\Rocket\Http\Request\UpdateParameterRequest;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

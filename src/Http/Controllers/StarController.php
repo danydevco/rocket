@@ -1,10 +1,10 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Controllers;
+namespace Danydev\Rocket\Http\Controllers;
 
 
 use Carbon\Carbon;
-use DeveloperHouse\Rocket\Models\Ch;
+use Danydev\Rocket\Models\Ch;
 use Illuminate\Support\Str;
 
 class StarController extends RocketController {

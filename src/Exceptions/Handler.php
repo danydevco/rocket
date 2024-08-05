@@ -1,10 +1,10 @@
 <?php
 
 
-namespace DeveloperHouse\Rocket\Exceptions;
+namespace Danydev\Rocket\Exceptions;
 
-use DeveloperHouse\Rocket\Models\Error;
-use DeveloperHouse\Rocket\Utils\ApiResponseUtil;
+use Danydev\Rocket\Models\Error;
+use Danydev\Rocket\Utils\ApiResponseUtil;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

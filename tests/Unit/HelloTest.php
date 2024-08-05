@@ -1,9 +1,9 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Tests\Unit;
+namespace Danydev\Rocket\Tests\Unit;
 
-use DeveloperHouse\Rocket\Facades\Rocket;
-use DeveloperHouse\Rocket\Tests\TestCase;
+use Danydev\Rocket\Facades\Rocket;
+use Danydev\Rocket\Tests\TestCase;
 
 class HelloTest extends TestCase {
 

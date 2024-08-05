@@ -1,11 +1,11 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Http\Controllers;
+namespace Danydev\Rocket\Http\Controllers;
 
-use DeveloperHouse\Rocket\Http\Authorizes\RoleAuthorize;
-use DeveloperHouse\Rocket\Http\Request\AssignPermissionRequest;
-use DeveloperHouse\Rocket\Http\Request\CreateRoleRequest;
-use DeveloperHouse\Rocket\Utils\Response;
+use Danydev\Rocket\Http\Authorizes\RoleAuthorize;
+use Danydev\Rocket\Http\Request\AssignPermissionRequest;
+use Danydev\Rocket\Http\Request\CreateRoleRequest;
+use Danydev\Rocket\Utils\Response;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;

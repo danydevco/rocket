@@ -1,6 +1,6 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Commands;
+namespace Danydev\Rocket\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;

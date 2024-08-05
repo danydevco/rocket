@@ -9,7 +9,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Instalación
 
 ``` bash
-composer require developerhouse/rocket
+composer require Danydev/rocket
 ```
 
 Una vez que se haya instalado el paquete, debes ejecutar los siguientes comandos: (Importante)
@@ -81,10 +81,10 @@ Este middleware asegura que los tokens de acceso se renueven automáticamente en
 */
 
 Route::group(['middleware' => 'accept-json'], function () {
-    
+
     Route::group(['middleware' => ['auth:sanctum', 'rocket.refresh.token']], function () {
         // Aca van las rutas de la API que se desean proteger
-    });        
+    });
 });
 ```
 
@@ -118,13 +118,13 @@ php artisan vendor:publish --tag=rocket-seeders
 Después de publicar los seeders del paquete Rocket, debes modificar el seeder principal `DatabaseSeeder` de tu proyecto para que pueda ejecutar los seeders de Rocket. Aquí tienes un ejemplo de cómo debería verse tú `DatabaseSeeder`:
 
 ``` php
-use DeveloperHouse\Rocket\seeders\RoleSeeder;
-use DeveloperHouse\Rocket\seeders\ValueSeeder;
-use DeveloperHouse\Rocket\seeders\ParameterSeeder;
-use DeveloperHouse\Rocket\seeders\CountrySeeder;
-use DeveloperHouse\Rocket\seeders\DepartmentSeeder;
-use DeveloperHouse\Rocket\seeders\CitySeeder;
-use DeveloperHouse\Rocket\seeders\UserSeeder;
+use Danydev\Rocket\seeders\RoleSeeder;
+use Danydev\Rocket\seeders\ValueSeeder;
+use Danydev\Rocket\seeders\ParameterSeeder;
+use Danydev\Rocket\seeders\CountrySeeder;
+use Danydev\Rocket\seeders\DepartmentSeeder;
+use Danydev\Rocket\seeders\CitySeeder;
+use Danydev\Rocket\seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder {
     /**
@@ -183,7 +183,7 @@ Estos comandos copiarán los recursos correspondientes del paquete Rocket a tu p
 ## Agrega el Trait al modelo User
 ```
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use DeveloperHouse\Rocket\Traits\UserRocketTrait;
+use Danydev\Rocket\Traits\UserRocketTrait;
 
 class User extends Authenticatable{
     use UserRocketTrait;
@@ -237,7 +237,7 @@ De forma predeterminada, los tokens de Sanctum caducan cada 30 Minutos. Sin emba
 - cities
 
 ## Usuario por defecto:
-- email: rocket@developerhouse.co
+- email: rocket@Danydev.co
 - password: password
 
 ## Rutas por defecto de la API:

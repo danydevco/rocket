@@ -1,16 +1,16 @@
 <?php
 
-namespace DeveloperHouse\Rocket\Providers;
+namespace Danydev\Rocket\Providers;
 
-use DeveloperHouse\Rocket\Commands\SeederCommand;
-use DeveloperHouse\Rocket\Commands\TruncateCommand;
-use DeveloperHouse\Rocket\Exceptions\Handler;
-use DeveloperHouse\Rocket\Start;
-use DeveloperHouse\Rocket\Views\Components\Breadcrumb;
-use DeveloperHouse\Rocket\Views\Components\Email\TextEmailComponent;
-use DeveloperHouse\Rocket\Views\Components\Header;
-use DeveloperHouse\Rocket\Views\Components\Sidebar;
-use DeveloperHouse\Rocket\Views\Components\TableComponent;
+use Danydev\Rocket\Commands\SeederCommand;
+use Danydev\Rocket\Commands\TruncateCommand;
+use Danydev\Rocket\Exceptions\Handler;
+use Danydev\Rocket\Start;
+use Danydev\Rocket\Views\Components\Breadcrumb;
+use Danydev\Rocket\Views\Components\Email\TextEmailComponent;
+use Danydev\Rocket\Views\Components\Header;
+use Danydev\Rocket\Views\Components\Sidebar;
+use Danydev\Rocket\Views\Components\TableComponent;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Permission\PermissionServiceProvider;
