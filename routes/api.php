@@ -1,14 +1,14 @@
 <?php
 
-use Danydev\Rocket\Http\Controllers\AuthController;
-use Danydev\Rocket\Http\Controllers\ParameterController;
-use Danydev\Rocket\Http\Controllers\StarController;
-use Danydev\Rocket\Http\Controllers\ValueController;
-use Danydev\Rocket\Http\Controllers\CountryController;
-use Danydev\Rocket\Http\Controllers\DepartmentController;
-use Danydev\Rocket\Http\Controllers\CityController;
-use Danydev\Rocket\Http\Controllers\RoleController;
-use Danydev\Rocket\Http\Controllers\PermissionController;
+use Danydevco\Rocket\Http\Controllers\AuthController;
+use Danydevco\Rocket\Http\Controllers\ParameterController;
+use Danydevco\Rocket\Http\Controllers\StarController;
+use Danydevco\Rocket\Http\Controllers\ValueController;
+use Danydevco\Rocket\Http\Controllers\CountryController;
+use Danydevco\Rocket\Http\Controllers\DepartmentController;
+use Danydevco\Rocket\Http\Controllers\CityController;
+use Danydevco\Rocket\Http\Controllers\RoleController;
+use Danydevco\Rocket\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('auth')->middleware(['rocket.api.response'])->group(function () {

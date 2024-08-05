@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Danydev\Rocket\Models\ModelHasRoles;
-use Danydev\Rocket\Models\RoleHasPermission;
-use Danydev\Rocket\Models\Value;
+use Danydevco\Rocket\Models\ModelHasRoles;
+use Danydevco\Rocket\Models\RoleHasPermission;
+use Danydevco\Rocket\Models\Value;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -28,10 +28,10 @@ class UserSeeder extends Seeder {
             $user->id          = 1;
             $user->first_names = 'Developer';
             $user->last_names  = 'House S.A.S';
-            $user->username    = 'Danydev';
+            $user->username    = 'Danydevco';
             $user->gender_id   = 3002;
             $user->state_id    = 1001;
-            $user->email       = 'rocket@Danydev.co';
+            $user->email       = 'rocket@Danydevco.co';
             $user->password    = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; // password
             $user->save();
 

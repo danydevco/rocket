@@ -9,7 +9,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Instalación
 
 ``` bash
-composer require Danydev/rocket
+composer require Danydevco/rocket
 ```
 
 Una vez que se haya instalado el paquete, debes ejecutar los siguientes comandos: (Importante)
@@ -118,13 +118,13 @@ php artisan vendor:publish --tag=rocket-seeders
 Después de publicar los seeders del paquete Rocket, debes modificar el seeder principal `DatabaseSeeder` de tu proyecto para que pueda ejecutar los seeders de Rocket. Aquí tienes un ejemplo de cómo debería verse tú `DatabaseSeeder`:
 
 ``` php
-use Danydev\Rocket\seeders\RoleSeeder;
-use Danydev\Rocket\seeders\ValueSeeder;
-use Danydev\Rocket\seeders\ParameterSeeder;
-use Danydev\Rocket\seeders\CountrySeeder;
-use Danydev\Rocket\seeders\DepartmentSeeder;
-use Danydev\Rocket\seeders\CitySeeder;
-use Danydev\Rocket\seeders\UserSeeder;
+use Danydevco\Rocket\seeders\RoleSeeder;
+use Danydevco\Rocket\seeders\ValueSeeder;
+use Danydevco\Rocket\seeders\ParameterSeeder;
+use Danydevco\Rocket\seeders\CountrySeeder;
+use Danydevco\Rocket\seeders\DepartmentSeeder;
+use Danydevco\Rocket\seeders\CitySeeder;
+use Danydevco\Rocket\seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder {
     /**
@@ -183,7 +183,7 @@ Estos comandos copiarán los recursos correspondientes del paquete Rocket a tu p
 ## Agrega el Trait al modelo User
 ```
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Danydev\Rocket\Traits\UserRocketTrait;
+use Danydevco\Rocket\Traits\UserRocketTrait;
 
 class User extends Authenticatable{
     use UserRocketTrait;
@@ -237,7 +237,7 @@ De forma predeterminada, los tokens de Sanctum caducan cada 30 Minutos. Sin emba
 - cities
 
 ## Usuario por defecto:
-- email: rocket@Danydev.co
+- email: rocket@Danydevco.co
 - password: password
 
 ## Rutas por defecto de la API:

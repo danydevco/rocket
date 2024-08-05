@@ -1,12 +1,12 @@
 <?php
 
-namespace Danydev\Rocket\Http\Controllers;
+namespace Danydevco\Rocket\Http\Controllers;
 
-use Danydev\Rocket\Http\Authorizes\CountryAuthorize;
-use Danydev\Rocket\Http\Request\CreateCountryRequest;
-use Danydev\Rocket\Http\Request\UpdateCountryRequest;
-use Danydev\Rocket\Models\Country;
-use Danydev\Rocket\Utils\Response;
+use Danydevco\Rocket\Http\Authorizes\CountryAuthorize;
+use Danydevco\Rocket\Http\Request\CreateCountryRequest;
+use Danydevco\Rocket\Http\Request\UpdateCountryRequest;
+use Danydevco\Rocket\Models\Country;
+use Danydevco\Rocket\Utils\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 

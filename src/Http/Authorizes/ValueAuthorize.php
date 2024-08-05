@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Http\Authorizes;
+namespace Danydevco\Rocket\Http\Authorizes;
 use App\Models\User;
 
 class ValueAuthorize {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Models;
+namespace Danydevco\Rocket\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

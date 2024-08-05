@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Constants;
+namespace Danydevco\Rocket\Constants;
 
 class ModelConstant {
     const USER = "App\Models\User";

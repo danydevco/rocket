@@ -1,9 +1,9 @@
 <?php
 
-namespace Danydev\Rocket\Tests;
+namespace Danydevco\Rocket\Tests;
 
-use Danydev\Rocket\Facades\Rocket;
-use Danydev\Rocket\Providers\RocketServiceProvider;
+use Danydevco\Rocket\Facades\Rocket;
+use Danydevco\Rocket\Providers\RocketServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase {
     protected function getPackageProviders($app) {

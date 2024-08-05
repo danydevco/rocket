@@ -1,8 +1,8 @@
 <?php
 
-namespace Danydev\Rocket\Views\Components;
+namespace Danydevco\Rocket\Views\Components;
 
-use Danydev\Rocket\Builders\Table\TableBuilder;
+use Danydevco\Rocket\Builders\Table\TableBuilder;
 use Illuminate\View\Component;
 
 class TableComponent extends Component {

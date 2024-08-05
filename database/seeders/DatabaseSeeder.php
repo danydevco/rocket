@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\seeders;
+namespace Danydevco\Rocket\seeders;
 
 use Spatie\Permission\Models\Role;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Danydev\Rocket\Http\Controllers;
+namespace Danydevco\Rocket\Http\Controllers;
 
-use Danydev\Rocket\Http\Authorizes\ValueAuthorize;
-use Danydev\Rocket\Http\Request\StoreValueRequest;
-use Danydev\Rocket\Http\Request\UpdateValueRequest;
-use Danydev\Rocket\Models\Parameter;
-use Danydev\Rocket\Models\Value;
-use Danydev\Rocket\Utils\Response;
+use Danydevco\Rocket\Http\Authorizes\ValueAuthorize;
+use Danydevco\Rocket\Http\Request\StoreValueRequest;
+use Danydevco\Rocket\Http\Request\UpdateValueRequest;
+use Danydevco\Rocket\Models\Parameter;
+use Danydevco\Rocket\Models\Value;
+use Danydevco\Rocket\Utils\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;

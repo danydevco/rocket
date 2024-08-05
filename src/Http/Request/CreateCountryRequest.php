@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Http\Request;
+namespace Danydevco\Rocket\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 

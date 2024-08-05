@@ -1,8 +1,8 @@
 <?php
 
-namespace Danydev\Rocket\Commands;
+namespace Danydevco\Rocket\Commands;
 
-use Danydev\Rocket\seeders\DatabaseSeeder;
+use Danydevco\Rocket\seeders\DatabaseSeeder;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Console\Command;
 

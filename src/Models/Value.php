@@ -1,10 +1,10 @@
 <?php
 
-namespace Danydev\Rocket\Models;
+namespace Danydevco\Rocket\Models;
 
 
-use Danydev\Rocket\Http\Request\StoreValueRequest;
-use Danydev\Rocket\Http\Request\UpdateValueRequest;
+use Danydevco\Rocket\Http\Request\StoreValueRequest;
+use Danydevco\Rocket\Http\Request\UpdateValueRequest;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;

@@ -1,10 +1,10 @@
 {
-    "name": "danydev/rocket",
+    "name": "danydevco/rocket",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Danydev\\Rocket\\": [
+            "Danydevco\\Rocket\\": [
                 "src/",
                 "database/"
             ]
@@ -12,14 +12,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Danydev\\Rocket\\Tests\\": "tests/"
+            "Danydevco\\Rocket\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
             "name": "Daniel Jose Ruiz Gutierrez",
-            "email": "hello@danydev.co",
-            "homepage": "https://danydev.co",
+            "email": "hello@danydevco.co",
+            "homepage": "https://Danydevco.co",
             "role": "Developer"
         }
     ],
@@ -39,11 +39,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Danydev\\Rocket\\Providers\\RocketServiceProvider",
-                "Danydev\\Rocket\\Providers\\RouteServiceProvider"
+                "Danydevco\\Rocket\\Providers\\RocketServiceProvider",
+                "Danydevco\\Rocket\\Providers\\RouteServiceProvider"
             ],
             "aliases": {
-                "Rocket": "Danydev\\Rocket\\Facades\\Rocket"
+                "Rocket": "Danydevco\\Rocket\\Facades\\Rocket"
             }
         }
     },

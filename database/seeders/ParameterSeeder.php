@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Danydev\Rocket\Models\Parameter;
+use Danydevco\Rocket\Models\Parameter;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

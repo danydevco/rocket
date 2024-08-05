@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Facades;
+namespace Danydevco\Rocket\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

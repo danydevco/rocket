@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Utils;
+namespace Danydevco\Rocket\Utils;
 
 use Illuminate\Http\JsonResponse;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Danydev\Rocket\Http\Controllers;
+namespace Danydevco\Rocket\Http\Controllers;
 
-use Danydev\Rocket\Http\Authorizes\CityAuthorize;
-use Danydev\Rocket\Http\Request\CreateCityRequest;
-use Danydev\Rocket\Http\Request\EditCityRequest;
-use Danydev\Rocket\Http\Request\IndexCityRequest;
-use Danydev\Rocket\Models\City;
-use Danydev\Rocket\Utils\Response;
+use Danydevco\Rocket\Http\Authorizes\CityAuthorize;
+use Danydevco\Rocket\Http\Request\CreateCityRequest;
+use Danydevco\Rocket\Http\Request\EditCityRequest;
+use Danydevco\Rocket\Http\Request\IndexCityRequest;
+use Danydevco\Rocket\Models\City;
+use Danydevco\Rocket\Utils\Response;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 

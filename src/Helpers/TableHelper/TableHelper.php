@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Helpers\TableHelper;
+namespace Danydevco\Rocket\Helpers\TableHelper;
 
 class TableHelper {
 

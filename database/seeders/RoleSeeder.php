@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Danydev\Rocket\Models\RoleHasPermission;
+use Danydevco\Rocket\Models\RoleHasPermission;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Http\Middleware;
+namespace Danydevco\Rocket\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;

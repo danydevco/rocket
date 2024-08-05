@@ -1,6 +1,6 @@
 <?php
 
-namespace Danydev\Rocket\Builders\Table\Beans;
+namespace Danydevco\Rocket\Builders\Table\Beans;
 
 class ActionDropdownBean {
     public string $label = '';
