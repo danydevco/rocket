@@ -1,4 +1,4 @@
-@extends('quick::templates.layout.app')
+@extends('quick::templates.layout.our')
 
 
 @section('content')

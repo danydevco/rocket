@@ -4,5 +4,5 @@
 </p>
 <hr>
 <p style="text-align: center; font-size: 0.75rem; color: #718096; margin-bottom: 2.25rem;">
-    © {{ date('Y') }} {{ config('app.name') }}. @lang('Todos los derechos reservados')
+    © {{ date('Y') }} {{ config('our.name') }}. @lang('Todos los derechos reservados')
 </p>

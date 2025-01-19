@@ -18,7 +18,7 @@
             <tbody style="width: 100%; max-width: 600px; margin: 0 auto; display: block;">
                 <tr>
                     <td style="text-align: center; padding: 45px 0;">
-                        @include('rocket::mail.templates.header', ['url' => config('app.url')])
+                        @include('rocket::mail.templates.header', ['url' => config('our.url')])
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td style="text-align: center; padding: 35px 40px; line-height: 24px; font-size: 16px;">
-                        @include('rocket::mail.templates.footer', ['url' => config('app.url')])
+                        @include('rocket::mail.templates.footer', ['url' => config('our.url')])
                     </td>
                 </tr>
             </tbody>

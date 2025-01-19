@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider {
 
         $this->app['router']->aliasMiddleware('rocket.api.response', ApiResponseMiddleware::class);
         $this->app['router']->aliasMiddleware('rocket.refresh.token', RefreshTokenMiddleware::class);
-        //$this->app['router']->aliasMiddleware('rocket.error.handler', ErrorHandlerMiddleware::class);
+        //$this->our['router']->aliasMiddleware('rocket.error.handler', ErrorHandlerMiddleware::class);
 
     }
 }

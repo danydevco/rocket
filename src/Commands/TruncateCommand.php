@@ -20,8 +20,8 @@ class TruncateCommand extends Command {
         DB::table('users')->truncate();
         $this->line('Truncated users table.');
 
-        DB::table('personal_access_tokens')->truncate();
-        $this->line('Truncated personal_access_tokens table.');
+        // DB::table('personal_access_tokens')->truncate();
+        // $this->line('Truncated personal_access_tokens table.');
 
         DB::table('model_has_permissions')->truncate();
         $this->line('Truncated model_has_permissions table.');

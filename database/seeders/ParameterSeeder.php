@@ -37,6 +37,7 @@ class ParameterSeeder extends Seeder {
                 [
                     [3, 3001, 'Mujer', 1, 'Genero femenino'],
                     [3, 3002, 'Hombre', 1, 'Genero masculino'],
+                    [3, 3003, 'Sin definir', 1, 'No especificado'],
                 ],
                 // Estados activo o inactivo
                 [

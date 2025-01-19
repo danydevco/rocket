@@ -2,7 +2,7 @@
 
 namespace Danydevco\Rocket\Views\Components;
 
-use Danydevco\Rocket\Builders\Table\TableBuilder;
+use Danydevco\Rocket\builders\Table\TableBuilder;
 use Illuminate\View\Component;
 
 class TableComponent extends Component {

@@ -4,7 +4,7 @@
  *   |         ^^^^^^^^^^^^
  *   '
  *   ../plugins/bootstrap/bootstrap.scss 1:9  @import
- *   app.scss 5:9                             root stylesheet */
+ *   our.scss 5:9                             root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",

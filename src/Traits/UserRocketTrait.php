@@ -4,11 +4,12 @@ namespace Danydevco\Rocket\Traits;
 
 use Danydevco\Rocket\Models\Parameter;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Laravel\Fortify\TwoFactorAuthenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
 trait UserRocketTrait {
 
-    use HasRoles;
+    use HasRoles, TwoFactorAuthenticatable;
 
     public function state() {
         return $this->belongsTo(Parameter::class, 'state_id', 'code');

@@ -10,7 +10,7 @@
       <data directive="@canany" injection="true" prefix="&lt;?php&#10;if (app(\Illuminate\Contracts\Auth\Access\Gate::class)-&gt;any(" suffix=")): ?&gt;" />
       <data directive="@cannot" injection="true" prefix="&lt;?php&#10;if (app(\Illuminate\Contracts\Auth\Access\Gate::class)-&gt;denies(" suffix=")): ?&gt;" />
       <data directive="@case" injection="true" prefix="&lt;?php&#10;case (" suffix="): ?&gt;" />
-      <data directive="@checked" injection="true" prefix="&lt;?php&#10;if(" suffix="): echo 'checked'; endif; ?&gt;" />
+      <data directive="@checked" injection="true" prefix="&lt;?php if(" suffix=") {echo 'checked';}?&gt;" />
       <data directive="@choice" injection="true" prefix="&lt;?php&#10;echo app('translator')-&gt;choice(" suffix="); ?&gt;" />
       <data directive="@class" injection="true" prefix="class=&quot;&lt;?php echo \Illuminate\Support\Arr::toCssClasses(" suffix=")?&gt;&quot;" />
       <data directive="@component" injection="true" prefix="&lt;?php&#10;$__env-&gt;startComponent(" suffix="); ?&gt;" />
@@ -19,7 +19,7 @@
       <data directive="@csrf" />
       <data directive="@dd" injection="true" prefix="&lt;?php&#10;dd(" suffix="); ?&gt;" />
       <data directive="@default" />
-      <data directive="@disabled" injection="true" prefix="&lt;?php&#10;if(" suffix="): echo 'disabled'; endif; ?&gt;" />
+      <data directive="@disabled" injection="true" prefix="&lt;?php if(" suffix=") {echo 'disabled';}?&gt;" />
       <data directive="@dump" injection="true" prefix="&lt;?php&#10;dump(" suffix="); ?&gt;" />
       <data directive="@each" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;renderEach(" suffix="); ?&gt;" />
       <data directive="@else" />
@@ -28,6 +28,11 @@
       <data directive="@elsecanany" injection="true" prefix="&lt;?php&#10;elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)-&gt;any(" suffix=")): ?&gt;" />
       <data directive="@elsecannot" injection="true" prefix="&lt;?php&#10;elseif (app(\Illuminate\Contracts\Auth\Access\Gate::class)-&gt;denies(" suffix=")): ?&gt;" />
       <data directive="@elseguest" injection="true" prefix="&lt;?php&#10;elseif(auth()-&gt;guard(" suffix=")-&gt;guest()): ?&gt;" />
+      <data directive="@elsehasallroles" />
+      <data directive="@elsehasanyrole" />
+      <data directive="@elsehasexactroles" />
+      <data directive="@elsehaspermission" />
+      <data directive="@elsehasrole" />
       <data directive="@elseif" injection="true" prefix="&lt;?php&#10;elseif(" suffix="): ?&gt;" />
       <data directive="@elserole" injection="true" prefix="&lt;?php elseif(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasRole', {" suffix="})): ?&gt;" />
       <data directive="@empty" injection="true" prefix="&lt;?php&#10;if(empty(" suffix=")): ?&gt;" />
@@ -49,6 +54,7 @@
       <data directive="@endhasallroles" />
       <data directive="@endhasanyrole" />
       <data directive="@endhasexactroles" />
+      <data directive="@endhaspermission" />
       <data directive="@endhasrole" />
       <data directive="@endif" />
       <data directive="@endisset" />
@@ -63,6 +69,7 @@
       <data directive="@endpushonce" />
       <data directive="@endrole" />
       <data directive="@endsection" />
+      <data directive="@endsession" />
       <data directive="@endslot" />
       <data directive="@endswitch" />
       <data directive="@endunless" />
@@ -82,6 +89,7 @@
       <data directive="@hasallroles" injection="true" prefix="&lt;?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasAllRoles', {" suffix="})): ?&gt;" />
       <data directive="@hasanyrole" injection="true" prefix="&lt;?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasAnyRole', {" suffix="})): ?&gt;" />
       <data directive="@hasexactroles" injection="true" prefix="&lt;?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasExactRoles', {" suffix="})): ?&gt;" />
+      <data directive="@haspermission" />
       <data directive="@hasrole" injection="true" prefix="&lt;?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasRole', {" suffix="})): ?&gt;" />
       <data directive="@if" injection="true" prefix="&lt;?php&#10;if(" suffix="): ?&gt;" />
       <data directive="@include" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;make(" suffix=", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))-&gt;render(); ?&gt;" />
@@ -92,6 +100,7 @@
       <data directive="@js" injection="true" prefix="&lt;?php _bladeDirective(" suffix="); ?&gt;" />
       <data directive="@json" injection="true" prefix="&lt;?php&#10;echo json_encode(" suffix=") ?&gt;" />
       <data directive="@lang" injection="true" prefix="&lt;?php&#10;echo app('translator')-&gt;get(" suffix="); ?&gt;" />
+      <data directive="@measure" />
       <data directive="@method" injection="true" prefix="&lt;?php&#10;echo method_field(" suffix="); ?&gt;" />
       <data directive="@once" />
       <data directive="@overwrite" />
@@ -110,20 +119,28 @@
       <data directive="@role" injection="true" prefix="&lt;?php if(\Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasRole', {" suffix="})): ?&gt;" />
       <data directive="@section" injection="true" prefix="&lt;?php&#10;$__env-&gt;startSection(" suffix="); ?&gt;" />
       <data directive="@sectionMissing" injection="true" prefix="&lt;?php&#10;if (empty(trim($__env-&gt;yieldContent(" suffix=")))): ?&gt;" />
-      <data directive="@selected" injection="true" prefix="&lt;?php&#10;if(" suffix="): echo 'selected'; endif; ?&gt;" />
+      <data directive="@selected" injection="true" prefix="&lt;?php if(" suffix=") {echo 'selected';}?&gt;" />
+      <data directive="@session" injection="true" prefix="&lt;?php $value = session()-&gt;get(" suffix=")?&gt;&quot;" />
       <data directive="@show" />
       <data directive="@slot" injection="true" prefix="&lt;?php&#10;$__env-&gt;slot(" suffix="); ?&gt;" />
       <data directive="@stack" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;yieldPushContent(" suffix="); ?&gt;" />
       <data directive="@stop" />
-      <data directive="@style" injection="true" prefix="style=&quot;&lt;?php&#10;echo \Illuminate\Support\Arr::toCssStyles(" suffix=") ?&gt;&quot;" />
+      <data directive="@style" injection="true" prefix="class=&quot;&lt;?php echo \Illuminate\Support\Arr::toCssStyles(" suffix=")?&gt;&quot;" />
       <data directive="@switch" injection="true" prefix="&lt;?php&#10;switch(" suffix="): ?&gt;" />
       <data directive="@unless" injection="true" prefix="&lt;?php&#10;if (! (" suffix=")): ?&gt;" />
+      <data directive="@unlesshasallroles" />
+      <data directive="@unlesshasanyrole" />
+      <data directive="@unlesshasexactroles" />
+      <data directive="@unlesshaspermission" />
+      <data directive="@unlesshasrole" />
       <data directive="@unlessrole" injection="true" prefix="&lt;?php if(! \Spatie\Permission\PermissionServiceProvider::bladeMethodWrapper('hasRole', {" suffix="})): ?&gt;" />
       <data directive="@unset" injection="true" prefix="&lt;?php&#10;unset(" suffix="); ?&gt;" />
       <data directive="@verbatim" />
-      <data directive="@vite" injection="true" prefix="&lt;?php&#10;$__vite_arguments = " suffix=" ?? '()'; echo app(Illuminate\Foundation\Vite::class){$__vite_arguments}; ?&gt;" />
+      <data directive="@vite" injection="true" prefix="&lt;?php echo vite_func(" suffix="); ?&gt;" />
+      <data directive="@viteReactRefresh" />
       <data directive="@vitereactrefresh" />
       <data directive="@while" injection="true" prefix="&lt;?php&#10;while(" suffix="): ?&gt;" />
+      <data directive="@xray" />
       <data directive="@yield" injection="true" prefix="&lt;?php&#10;echo $__env-&gt;yieldContent(" suffix="); ?&gt;" />
     </directives>
   </component>

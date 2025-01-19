@@ -1,4 +1,4 @@
-@extends('quick::templates.auth.app')
+@extends('rocket::templates.auth.our')
 
 @section('content')
     <div class="container py-5 py-sm-7">
